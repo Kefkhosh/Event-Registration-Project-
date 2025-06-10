@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Platform - FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <style>
+    .faq-container {
+      max-width: 800px;
+      margin: 120px auto 40px;
+      padding: 2rem;
+    }
+
+    .search-container {
+      margin-bottom: 2rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .faq-category {
+      margin-bottom: 2rem;
+    }
+
+    .faq-category h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background: white;
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease;
+    }
+
+    .faq-question:hover {
+      background: var(--secondary-color);
+    }
+
+    .faq-question h3 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .faq-answer {
+      display: none;
+      background: var(--secondary-color);
+      padding: 0;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.active {
+      transform: rotate(45deg);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .faq-container {
+        padding: 1rem;
+      }
+
+      .faq-question h3 {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Event</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="faq-container">
+    <h1>Frequently Asked Questions</h1>
+    
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search FAQs..." id="faqSearch">
+    </div>
+
+    <div class="no-results">
+      <p>No questions found matching your search.</p>
+    </div>
+
+    <div class="faq-content">
+      <!-- General Questions -->
+      <div class="faq-category">
+        <h2>General Questions</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What are the event dates?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>EventX 2025 will take place from June 15-17, 2025, at the Main Conference Center.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>How can I register for the event?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>You can register through our website by clicking the "Register Now" button on the homepage. Early bird registration is available until March 31, 2025.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Questions -->
+      <div class="faq-category">
+        <h2>Registration</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>What is included in the registration fee?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>The registration fee includes access to all sessions, workshops, networking events, conference materials, and meals during the event.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Can I get a refund if I can't attend?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Refunds are available up to 30 days before the event. Please contact our support team for assistance with cancellations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Venue & Accommodation -->
+      <div class="faq-category">
+        <h2>Venue & Accommodation</h2>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Where is the event located?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>The event will be held at the Main Conference Center, located in the heart of the city. Detailed directions and parking information will be provided to registered attendees.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <h3>Are there any recommended hotels nearby?</h3>
+            <span class="toggle-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes, we have partnered with several hotels in the area to offer special rates for event attendees. You can find the list of recommended hotels in your registration confirmation email.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Event. All rights reserved.</p>
+      <p class="footer-signature">Created by <span>Kefkhosh Kefo</span></p>
+    </div>
+  </footer>
+</body>
+</html> 

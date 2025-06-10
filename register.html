@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Platform - Registration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\style.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <style>
+    .registration-form {
+      max-width: 800px;
+      margin: 120px auto 40px;
+      padding: 2rem;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="tel"],
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .radio-group,
+    .checkbox-group {
+      margin-top: 0.5rem;
+    }
+
+    .radio-group label,
+    .checkbox-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: normal;
+    }
+
+    .form-summary {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: var(--secondary-color);
+      border-radius: 4px;
+      display: none;
+    }
+
+    .error {
+      color: #d32f2f;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">EventX</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="registration-form">
+    <h1>Register for EventX 2025</h1>
+    <form id="registrationForm" action="confirmation.html" method="GET">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number *</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label>Select Session *</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" name="session" value="digital-marketing" required>
+            Digital Marketing Trends 2025
+          </label>
+          <label>
+            <input type="radio" name="session" value="social-media">
+            Social Media Mastery
+          </label>
+          <label>
+            <input type="radio" name="session" value="content-marketing">
+            Content Marketing Excellence
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Topics of Interest</label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="topics" value="seo">
+            SEO & Analytics
+          </label>
+          <label>
+            <input type="checkbox" name="topics" value="social">
+            Social Media Marketing
+          </label>
+          <label>
+            <input type="checkbox" name="topics" value="content">
+            Content Strategy
+          </label>
+          <label>
+            <input type="checkbox" name="topics" value="email">
+            Email Marketing
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="occupation">Occupation *</label>
+        <select id="occupation" name="occupation" required>
+          <option value="">Select your occupation</option>
+          <option value="student">Student</option>
+          <option value="freelancer">Freelancer</option>
+          <option value="manager">Manager</option>
+          <option value="director">Director</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Additional Message</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="consent" required>
+          I agree to the Terms & Conditions and Privacy Policy *
+        </label>
+      </div>
+
+      <button type="submit" class="btn">Register Now</button>
+    </form>
+
+    <div id="formSummary" class="form-summary">
+      <h2>Registration Summary</h2>
+      <div id="summaryContent"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Event. All rights reserved.</p>
+      <p class="footer-signature">Created by <span>Kefkhosh Kefo</span></p>
+    </div>
+  </footer>
+</body>
+</html> 

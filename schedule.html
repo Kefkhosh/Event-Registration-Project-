@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Platform - Schedule</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\style.css" />
+  <script src="js/jquery.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <style>
+    .schedule-container {
+      max-width: 1200px;
+      margin: 120px auto 40px;
+      padding: 2rem;
+    }
+
+    .schedule-filters {
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--primary-color);
+      background: transparent;
+      color: var(--primary-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    .schedule-table th {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .schedule-table tr:nth-child(even) {
+      background: var(--secondary-color);
+    }
+
+    .session-type {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.875rem;
+      margin-right: 0.5rem;
+    }
+
+    .type-workshop { background: #e3f2fd; color: #1565c0; }
+    .type-keynote { background: #fce4ec; color: #c2185b; }
+    .type-panel { background: #e8f5e9; color: #2e7d32; }
+
+    .session-details {
+        display: none;
+        padding: 1rem;
+        background: var(--secondary-color);
+        border-top: 1px solid #ddd;
+    }
+
+    .session-info {
+        margin: 0;
+    }
+
+    .session-info p {
+        margin-bottom: 0.5rem;
+    }
+
+    .session-row {
+        cursor: pointer;
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    .session-row:hover {
+        background-color: var(--secondary-color);
+        transform: scale(1.02);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 1;
+        position: relative;
+    }
+
+    .toggle-icon {
+        font-size: 1.5rem;
+        color: var(--primary-color);
+        transition: transform 0.3s ease;
+        margin-left: 1rem;
+    }
+
+    .toggle-icon.active {
+        transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+      .schedule-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .schedule-filters {
+        flex-direction: column;
+      }
+      
+      .filter-btn {
+        width: 100%;
+      }
+
+      .session-row:hover {
+        transform: scale(1.01);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Event</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="schedule-container">
+    <h1>Event Schedule</h1>
+    
+    <div class="schedule-filters">
+      <div class="date-filters">
+        <button class="filter-btn active" data-date="all">All Days</button>
+        <button class="filter-btn" data-date="day1">Day 1 (June 15)</button>
+        <button class="filter-btn" data-date="day2">Day 2 (June 16)</button>
+        <button class="filter-btn" data-date="day3">Day 3 (June 17)</button>
+      </div>
+      <div class="type-filters">
+        <button class="filter-btn active" data-type="all">All Types</button>
+        <button class="filter-btn" data-type="workshop">Workshops</button>
+        <button class="filter-btn" data-type="keynote">Keynotes</button>
+        <button class="filter-btn" data-type="panel">Panel Discussions</button>
+      </div>
+    </div>
+
+    <div class="schedule-content">
+      <table class="schedule-table" role="grid">
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Session</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Speaker</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Day 1 -->
+          <tr class="session-row" data-date="day1" data-type="keynote">
+            <td>09:00 - 10:00</td>
+            <td>
+              Opening Keynote: Future of Digital Marketing
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-keynote">Keynote</span></td>
+            <td>Main Hall</td>
+            <td>John Smith</td>
+          </tr>
+          <tr class="session-row" data-date="day1" data-type="workshop">
+            <td>10:30 - 12:00</td>
+            <td>
+              Advanced SEO Techniques
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-workshop">Workshop</span></td>
+            <td>Room A</td>
+            <td>Sarah Johnson</td>
+          </tr>
+          <tr class="session-row" data-date="day1" data-type="panel">
+            <td>13:00 - 14:30</td>
+            <td>
+              Social Media Strategy Panel
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-panel">Panel</span></td>
+            <td>Room B</td>
+            <td>Multiple Speakers</td>
+          </tr>
+
+          <!-- Day 2 -->
+          <tr class="session-row" data-date="day2" data-type="keynote">
+            <td>09:00 - 10:00</td>
+            <td>
+              AI in Marketing
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-keynote">Keynote</span></td>
+            <td>Main Hall</td>
+            <td>Michael Brown</td>
+          </tr>
+          <tr class="session-row" data-date="day2" data-type="workshop">
+            <td>10:30 - 12:00</td>
+            <td>
+              Content Marketing Masterclass
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-workshop">Workshop</span></td>
+            <td>Room A</td>
+            <td>Emma Wilson</td>
+          </tr>
+
+          <!-- Day 3 -->
+          <tr class="session-row" data-date="day3" data-type="keynote">
+            <td>09:00 - 10:00</td>
+            <td>
+              Closing Keynote: Marketing Trends 2025
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-keynote">Keynote</span></td>
+            <td>Main Hall</td>
+            <td>David Lee</td>
+          </tr>
+          <tr class="session-row" data-date="day3" data-type="panel">
+            <td>10:30 - 12:00</td>
+            <td>
+              Future of Marketing Technology
+              <span class="toggle-icon"></span>
+            </td>
+            <td><span class="session-type type-panel">Panel</span></td>
+            <td>Room B</td>
+            <td>Multiple Speakers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Event. All rights reserved.</p>
+      <p class="footer-signature">Created by <span>Kefkhosh Kefo</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const dateButtons = document.querySelectorAll('.date-filters .filter-btn');
+      const typeButtons = document.querySelectorAll('.type-filters .filter-btn');
+      const sessionRows = document.querySelectorAll('.session-row');
+
+      // Initially show all sessions
+      sessionRows.forEach(row => {
+        row.style.display = 'table-row';
+      });
+
+      // Handle date filter buttons
+      dateButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const date = this.getAttribute('data-date');
+
+          // Update active state of date buttons
+          dateButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          // Show/hide sessions based on date
+          sessionRows.forEach(row => {
+            if (date === 'all') {
+              row.style.display = 'table-row';
+            } else {
+              row.style.display = row.getAttribute('data-date') === date ? 'table-row' : 'none';
+            }
+          });
+        });
+      });
+
+      // Handle type filter buttons
+      typeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const type = this.getAttribute('data-type');
+
+          // Update active state of type buttons
+          typeButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+
+          // Show/hide sessions based on type
+          sessionRows.forEach(row => {
+            if (type === 'all') {
+              row.style.display = 'table-row';
+            } else {
+              row.style.display = row.getAttribute('data-type') === type ? 'table-row' : 'none';
+            }
+          });
+        });
+      });
+
+      // Handle session row clicks for details
+      sessionRows.forEach(row => {
+        row.addEventListener('click', function() {
+          const detailsRow = this.nextElementSibling;
+          if (detailsRow && detailsRow.classList.contains('session-details')) {
+            const toggleIcon = this.querySelector('.toggle-icon');
+            if (detailsRow.style.display === 'table-row') {
+              detailsRow.style.display = 'none';
+              toggleIcon.textContent = '+';
+              toggleIcon.classList.remove('active');
+            } else {
+              detailsRow.style.display = 'table-row';
+              toggleIcon.textContent = '×';
+              toggleIcon.classList.add('active');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html> 

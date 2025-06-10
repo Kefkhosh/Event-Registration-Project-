@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Platform - Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css\style.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <style>
+    .resources-container {
+      max-width: 1200px;
+      margin: 120px auto 40px;
+      padding: 2rem;
+    }
+
+    .resource-filters {
+      margin-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--primary-color);
+      background: transparent;
+      color: var(--primary-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .resource-category {
+      margin-bottom: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .category-header {
+      background: var(--primary-color);
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-header h2 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .category-content {
+      display: none;
+      background: white;
+    }
+
+    .resource-item {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .resource-item:last-child {
+      border-bottom: none;
+    }
+
+    .resource-icon {
+      width: 40px;
+      height: 40px;
+      margin-right: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--secondary-color);
+      border-radius: 4px;
+    }
+
+    .resource-info {
+      flex: 1;
+    }
+
+    .resource-title {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+
+    .resource-description {
+      color: #666;
+      font-size: 0.875rem;
+    }
+
+    .download-btn {
+      padding: 0.5rem 1rem;
+      background: var(--primary-color);
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: #1565c0;
+    }
+
+    .toggle-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-icon.active {
+      transform: rotate(45deg);
+    }
+
+    @media (max-width: 768px) {
+      .resource-filters {
+        flex-direction: column;
+      }
+      
+      .filter-btn {
+        width: 100%;
+      }
+
+      .resource-item {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .resource-icon {
+        margin: 0 0 1rem 0;
+      }
+
+      .download-btn {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Event</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="speakers.html">Speakers</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="resources-container">
+    <h1>Event Resources</h1>
+    
+    <div class="resource-filters">
+      <button class="filter-btn active" data-category="all">All Resources</button>
+      <button class="filter-btn" data-category="presentations">Presentations</button>
+      <button class="filter-btn" data-category="documents">Documents</button>
+      <button class="filter-btn" data-category="guides">Guides</button>
+    </div>
+
+    <div class="resources-content">
+      <!-- Presentations Category -->
+      <div class="resource-category" data-category="presentations">
+        <div class="category-header">
+          <h2>Presentations</h2>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="category-content">
+          <div class="resource-item">
+            <div class="resource-icon">📊</div>
+            <div class="resource-info">
+              <div class="resource-title">Digital Marketing Trends 2025</div>
+              <div class="resource-description">Comprehensive keynote presentation covering emerging trends, AI integration, and future predictions in digital marketing.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+          <div class="resource-item">
+            <div class="resource-icon">📈</div>
+            <div class="resource-info">
+              <div class="resource-title">Social Media Strategy</div>
+              <div class="resource-description">In-depth workshop presentation on building effective social media campaigns and measuring ROI.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+          <div class="resource-item">
+            <div class="resource-icon">🎯</div>
+            <div class="resource-info">
+              <div class="resource-title">Content Marketing Excellence</div>
+              <div class="resource-description">Master the art of content creation with this detailed presentation on content strategy and optimization.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Documents Category -->
+      <div class="resource-category" data-category="documents">
+        <div class="category-header">
+          <h2>Documents</h2>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="category-content">
+          <div class="resource-item">
+            <div class="resource-icon">📄</div>
+            <div class="resource-info">
+              <div class="resource-title">Event Schedule PDF</div>
+              <div class="resource-description">Complete event schedule with detailed session information, speaker bios, and venue maps.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+          <div class="resource-item">
+            <div class="resource-icon">📋</div>
+            <div class="resource-info">
+              <div class="resource-title">Speaker Bios</div>
+              <div class="resource-description">Detailed speaker biographies, credentials, and professional achievements.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+          <div class="resource-item">
+            <div class="resource-icon">📑</div>
+            <div class="resource-info">
+              <div class="resource-title">Event Guidelines</div>
+              <div class="resource-description">Important information about venue policies, networking opportunities, and event etiquette.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guides Category -->
+      <div class="resource-category" data-category="guides">
+        <div class="category-header">
+          <h2>Guides</h2>
+          <span class="toggle-icon">+</span>
+        </div>
+        <div class="category-content">
+          <div class="resource-item">
+            <div class="resource-icon">📚</div>
+            <div class="resource-info">
+              <div class="resource-title">Marketing Best Practices 2025</div>
+              <div class="resource-description">Comprehensive guide covering the latest marketing strategies, tools, and techniques.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+          <div class="resource-item">
+            <div class="resource-icon">🎯</div>
+            <div class="resource-info">
+              <div class="resource-title">Event Preparation Guide</div>
+              <div class="resource-description">Essential information to help you prepare for and make the most of your event experience.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+          <div class="resource-item">
+            <div class="resource-icon">💡</div>
+            <div class="resource-info">
+              <div class="resource-title">Networking Guide</div>
+              <div class="resource-description">Tips and strategies for effective networking during the event.</div>
+            </div>
+            <a href="#" class="download-btn">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Event. All rights reserved.</p>
+      <p class="footer-signature">Created by <span>Kefkhosh Kefo</span></p>
+    </div>
+  </footer>
+</body>
+</html> 

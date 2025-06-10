@@ -1,0 +1,143 @@
+{
+  "sessions": [
+    {
+      "id": "keynote-1",
+      "title": "Opening Keynote: Future of Digital Marketing",
+      "date": "2025-06-15",
+      "day": "day1",
+      "time": "09:00 - 10:00",
+      "type": "keynote",
+      "location": "Main Hall",
+      "speaker": {
+        "name": "John Smith",
+        "title": "Digital Marketing Director",
+        "image": "assets/images/speaker1.jpg"
+      },
+      "description": "Join us for an inspiring opening keynote that will set the tone for the entire conference. John Smith will share his vision for the future of digital marketing and the key trends that will shape the industry in 2025 and beyond."
+    },
+    {
+      "id": "workshop-1",
+      "title": "Advanced SEO Techniques",
+      "date": "2025-06-15",
+      "day": "day1",
+      "time": "10:30 - 12:00",
+      "type": "workshop",
+      "location": "Room A",
+      "speaker": {
+        "name": "Sarah Johnson",
+        "title": "Tech Innovation Lead",
+        "image": "assets/images/speaker2.jpg"
+      },
+      "description": "A hands-on workshop covering advanced SEO strategies, including technical SEO, content optimization, and link building techniques for 2025."
+    },
+    {
+      "id": "panel-1",
+      "title": "Social Media Strategy Panel",
+      "date": "2025-06-15",
+      "day": "day1",
+      "time": "13:00 - 14:30",
+      "type": "panel",
+      "location": "Room B",
+      "speaker": {
+        "name": "Multiple Speakers",
+        "title": "Industry Experts",
+        "image": "assets/images/panel.jpg"
+      },
+      "description": "An interactive panel discussion featuring industry leaders sharing their insights on social media strategy, platform updates, and best practices for engagement."
+    },
+    {
+      "id": "keynote-2",
+      "title": "AI in Marketing",
+      "date": "2025-06-16",
+      "day": "day2",
+      "time": "09:00 - 10:00",
+      "type": "keynote",
+      "location": "Main Hall",
+      "speaker": {
+        "name": "Michael Brown",
+        "title": "CEO & Founder",
+        "image": "assets/images/speaker3.jpg"
+      },
+      "description": "Explore how artificial intelligence is revolutionizing marketing strategies and learn practical ways to implement AI in your marketing campaigns."
+    },
+    {
+      "id": "workshop-2",
+      "title": "Content Marketing Masterclass",
+      "date": "2025-06-16",
+      "day": "day2",
+      "time": "10:30 - 12:00",
+      "type": "workshop",
+      "location": "Room A",
+      "speaker": {
+        "name": "Emma Wilson",
+        "title": "Content Strategy Director",
+        "image": "assets/images/speaker4.jpg"
+      },
+      "description": "Learn how to create compelling content that resonates with your audience and drives results in this comprehensive masterclass."
+    },
+    {
+      "id": "keynote-3",
+      "title": "Closing Keynote: Marketing Trends 2025",
+      "date": "2025-06-17",
+      "day": "day3",
+      "time": "09:00 - 10:00",
+      "type": "keynote",
+      "location": "Main Hall",
+      "speaker": {
+        "name": "David Lee",
+        "title": "Industry Analyst",
+        "image": "assets/images/speaker5.jpg"
+      },
+      "description": "A forward-looking keynote that will summarize the key learnings from the conference and provide insights into emerging marketing trends for 2025."
+    },
+    {
+      "id": "panel-2",
+      "title": "Future of Marketing Technology",
+      "date": "2025-06-17",
+      "day": "day3",
+      "time": "10:30 - 12:00",
+      "type": "panel",
+      "location": "Room B",
+      "speaker": {
+        "name": "Multiple Speakers",
+        "title": "Tech Leaders",
+        "image": "assets/images/panel2.jpg"
+      },
+      "description": "A panel discussion exploring the latest marketing technologies and how they're shaping the future of the industry."
+    }
+  ],
+  "sessionTypes": [
+    {
+      "id": "keynote",
+      "name": "Keynote",
+      "description": "Main stage presentations from industry leaders"
+    },
+    {
+      "id": "workshop",
+      "name": "Workshop",
+      "description": "Interactive sessions with hands-on learning"
+    },
+    {
+      "id": "panel",
+      "name": "Panel Discussion",
+      "description": "Group discussions with multiple industry experts"
+    }
+  ],
+  "locations": [
+    {
+      "id": "main-hall",
+      "name": "Main Hall",
+      "capacity": 500
+    },
+    {
+      "id": "room-a",
+      "name": "Room A",
+      "capacity": 100
+    },
+    {
+      "id": "room-b",
+      "name": "Room B",
+      "capacity": 150
+    }
+  ]
+} 
